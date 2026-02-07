@@ -577,55 +577,192 @@ h1 {
     box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
 }
 
-@media (max-width: 768px) {
-    .nav-links {
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE FIRST
+   ============================================ */
+
+/* Mobile (default: 320px - 767px) */
+@media (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 0 5px;
+    }
+    
+    /* Navigation */
+    .nav-container {
+        flex-direction: column;
+        padding: 15px 10px;
         gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .nav-links a {
-        font-size: 0.85em;
-    }
-    
-    .logo {
-        font-size: 1.2em;
-    }
-    
-    .logo-icon {
-        font-size: 1.5em;
-    }
-    
-    h1 { 
-        font-size: 2.5em; 
-    }
-    
-    .trust-badges {
-        gap: 15px;
-    }
-    
-    .trust-badge {
-        font-size: 0.85em;
+        font-size: 0.8em;
         padding: 6px 12px;
     }
     
-    .subtitle {
+    .logo {
         font-size: 1.1em;
+    }
+    
+    .logo-icon {
+        font-size: 1.3em;
+    }
+    
+    /* Hero Section */
+    h1 { 
+        font-size: 2em;
+        letter-spacing: -1px;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+    
+    .trust-badges {
+        gap: 10px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .trust-badge {
+        font-size: 0.8em;
+        padding: 8px 12px;
+        justify-content: center;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2.5em;
+    }
+    
+    .stat-label {
+        font-size: 0.8em;
     }
     
     .hero-cta-btn {
-        font-size: 1.1em;
-        padding: 16px 40px;
+        font-size: 1em;
+        padding: 14px 30px;
+        width: 100%;
+        max-width: 300px;
     }
     
     header {
-        padding: 60px 15px 40px;
+        padding: 40px 10px 30px;
+    }
+    
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .product-title {
+        font-size: 1em;
+        min-height: auto;
+    }
+    
+    .product-price {
+        font-size: 1.3em;
+    }
+    
+    .buy-btn {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+    
+    /* Similar Products */
+    .similar-products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .similar-product-card {
+        padding: 15px;
+    }
+    
+    /* Filters */
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    select, input {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    h1 {
+        font-size: 3em;
+    }
+    
+    .nav-container {
+        padding: 20px;
     }
     
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     
     .similar-products-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-stats {
+        gap: 40px;
+    }
+    
+    .trust-badges {
+        flex-wrap: wrap;
+    }
+}
+
+/* Desktop (1024px+) - Styles de base déjà optimisés */
+@media (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .similar-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -1052,26 +1189,6 @@ h1 {
             <div class="similar-products-grid">
             
                 <div class="similar-product-card">
-                    <img src="https://m.media-amazon.com/images/I/711JsjSoLcL._AC_UY218_.jpg" alt="A-Tech 32GB RAM for ASUS ROG G700 (2025) GM700, GM700TZ Gaming Desktop | DDR5 5600MHz PC5-44800 DIMM 2Rx8 1.1V 288-Pin Non-ECC UDIMM Memory Upgrade" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
-                    <div class="similar-product-info">
-                        <h4 class="similar-product-title">A-Tech 32GB RAM for ASUS ROG G700 (2025) GM700, GM700TZ Gaming Desktop | DDR5 5600MHz PC5-44800 DIMM 2Rx8 1.1V 288-Pin Non-ECC UDIMM Memory Upgrade</h4>
-                        <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">7.6/10</span></div>
-                        <p class="similar-product-price">$253</p>
-                        <a href="ram-a-tech-32gb-for-asus-rog-g700-2025-gm700-gm700tz-gaming-en.html" class="similar-view-button">View Deal</a>
-                    </div>
-                </div>
-            
-                <div class="similar-product-card">
-                    <img src="https://m.media-amazon.com/images/I/71vFQSm7NoL._AC_UY218_.jpg" alt="Samsung 32GB DDR5 5600MHz PC5-44800 CL46 SODIMM 2Rx8 Dual Rank 1.1V 262-Pin Laptop RAM Memory M425R4GA3BB0-CWM" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
-                    <div class="similar-product-info">
-                        <h4 class="similar-product-title">Samsung 32GB DDR5 5600MHz PC5-44800 CL46 SODIMM 2Rx8 Dual Rank 1.1V 262-Pin Laptop RAM Memory M425R4GA3BB0-CWM</h4>
-                        <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">6.9/10</span></div>
-                        <p class="similar-product-price">$279.21</p>
-                        <a href="ram-samsung-32gb-ddr5-5600mhz-pc5-44800-cl46-sodimm-2rx8-dual-ra-en.html" class="similar-view-button">View Deal</a>
-                    </div>
-                </div>
-            
-                <div class="similar-product-card">
                     <img src="https://m.media-amazon.com/images/I/81MvMISTOlL._AC_UY218_.jpg" alt="32GB 1X32GB DDR5 4800MHZ PC5-38400 1.1V CL40 262-PIN Non-ECC SODIMM NEMIX RAM Compatible with UGREEN NASync DXP4800 Plus DXP480T Plus DXP6800 Pro DXP8800 Plus NAS Storage Systems" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
                     <div class="similar-product-info">
                         <h4 class="similar-product-title">32GB 1X32GB DDR5 4800MHZ PC5-38400 1.1V CL40 262-PIN Non-ECC SODIMM NEMIX RAM Compatible with UGREEN NASync DXP4800 Plus DXP480T Plus DXP6800 Pro DXP8800 Plus NAS Storage Systems</h4>
@@ -1082,12 +1199,32 @@ h1 {
                 </div>
             
                 <div class="similar-product-card">
-                    <img src="https://m.media-amazon.com/images/I/71mpqWtH5sL._AC_UY218_.jpg" alt="Crucial 32GB DDR5 RAM Kit (2x16GB), 5600MHz (or 5200MHz or 4800MHz) Laptop Memory 262-Pin SODIMM, Compatible with Intel Core and AMD Ryzen 7000, Black - CT2K16G56C46S5" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
+                    <img src="https://m.media-amazon.com/images/I/81pclS+CxtL._AC_UY218_.jpg" alt="A-Tech 64GB Kit (2x32GB) DDR5 5600MHz PC5-44800 CL46 SODIMM 2Rx8 Dual Rank 1.1V Non-ECC Unbuffered SO-DIMM 262-Pin Laptop Computer RAM Memory Upgrade Modules" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
                     <div class="similar-product-info">
-                        <h4 class="similar-product-title">Crucial 32GB DDR5 RAM Kit (2x16GB), 5600MHz (or 5200MHz or 4800MHz) Laptop Memory 262-Pin SODIMM, Compatible with Intel Core and AMD Ryzen 7000, Black - CT2K16G56C46S5</h4>
-                        <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">6.5/10</span></div>
-                        <p class="similar-product-price">$297.88</p>
-                        <a href="ram-crucial-32gb-ddr5-kit-2x16gb-5600mhz-or-5200mhz-or-4800m-en.html" class="similar-view-button">View Deal</a>
+                        <h4 class="similar-product-title">A-Tech 64GB Kit (2x32GB) DDR5 5600MHz PC5-44800 CL46 SODIMM 2Rx8 Dual Rank 1.1V Non-ECC Unbuffered SO-DIMM 262-Pin Laptop Computer RAM Memory Upgrade Modules</h4>
+                        <div class="recommendation-badge good">✓ Good Choice <span class="score">5.3/10</span></div>
+                        <p class="similar-product-price">$660</p>
+                        <a href="ram-a-tech-64gb-kit-2x32gb-ddr5-5600mhz-pc5-44800-cl46-sodimm-2r-en.html" class="similar-view-button">View Deal</a>
+                    </div>
+                </div>
+            
+                <div class="similar-product-card">
+                    <img src="https://m.media-amazon.com/images/I/61gD0yqG+AL._AC_UY218_.jpg" alt="G.SKILL Flare X5 Series DDR5 RAM (AMD Expo & Intel XMP 3.0) 32GB (2x16GB) 6000MT/s CL36-36-36-96 1.35V Desktop Computer Memory U-DIMM - Matte Black (F5-6000J3636F16GX2-FX5)" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
+                    <div class="similar-product-info">
+                        <h4 class="similar-product-title">G.SKILL Flare X5 Series DDR5 RAM (AMD Expo & Intel XMP 3.0) 32GB (2x16GB) 6000MT/s CL36-36-36-96 1.35V Desktop Computer Memory U-DIMM - Matte Black (F5-6000J3636F16GX2-FX5)</h4>
+                        <div class="recommendation-badge good">✓ Good Choice <span class="score">5.3/10</span></div>
+                        <p class="similar-product-price">$364.12</p>
+                        <a href="ram-gskill-flare-x5-series-ddr5-amd-expo-intel-xmp-30-32gb-2-en.html" class="similar-view-button">View Deal</a>
+                    </div>
+                </div>
+            
+                <div class="similar-product-card">
+                    <img src="https://m.media-amazon.com/images/I/81Ym7cT2+yL._AC_UY218_.jpg" alt="Samsung 64GB (2x32GB) DDR5 5600MHz PC5-44800 CL46 SODIMM 2Rx8 Dual Rank 1.1V 262-Pin Laptop, Notebook RAM Memory" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
+                    <div class="similar-product-info">
+                        <h4 class="similar-product-title">Samsung 64GB (2x32GB) DDR5 5600MHz PC5-44800 CL46 SODIMM 2Rx8 Dual Rank 1.1V 262-Pin Laptop, Notebook RAM Memory</h4>
+                        <div class="recommendation-badge good">✓ Good Choice <span class="score">5.2/10</span></div>
+                        <p class="similar-product-price">$677</p>
+                        <a href="ram-samsung-64gb-2x32gb-ddr5-5600mhz-pc5-44800-cl46-sodimm-2rx8-en.html" class="similar-view-button">View Deal</a>
                     </div>
                 </div>
             

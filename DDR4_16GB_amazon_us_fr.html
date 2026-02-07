@@ -604,55 +604,192 @@ h1 {
     box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
 }
 
-@media (max-width: 768px) {
-    .nav-links {
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE FIRST
+   ============================================ */
+
+/* Mobile (default: 320px - 767px) */
+@media (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 0 5px;
+    }
+    
+    /* Navigation */
+    .nav-container {
+        flex-direction: column;
+        padding: 15px 10px;
         gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .nav-links a {
-        font-size: 0.85em;
-    }
-    
-    .logo {
-        font-size: 1.2em;
-    }
-    
-    .logo-icon {
-        font-size: 1.5em;
-    }
-    
-    h1 { 
-        font-size: 2.5em; 
-    }
-    
-    .trust-badges {
-        gap: 15px;
-    }
-    
-    .trust-badge {
-        font-size: 0.85em;
+        font-size: 0.8em;
         padding: 6px 12px;
     }
     
-    .subtitle {
+    .logo {
         font-size: 1.1em;
+    }
+    
+    .logo-icon {
+        font-size: 1.3em;
+    }
+    
+    /* Hero Section */
+    h1 { 
+        font-size: 2em;
+        letter-spacing: -1px;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+    
+    .trust-badges {
+        gap: 10px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .trust-badge {
+        font-size: 0.8em;
+        padding: 8px 12px;
+        justify-content: center;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2.5em;
+    }
+    
+    .stat-label {
+        font-size: 0.8em;
     }
     
     .hero-cta-btn {
-        font-size: 1.1em;
-        padding: 16px 40px;
+        font-size: 1em;
+        padding: 14px 30px;
+        width: 100%;
+        max-width: 300px;
     }
     
     header {
-        padding: 60px 15px 40px;
+        padding: 40px 10px 30px;
+    }
+    
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .product-title {
+        font-size: 1em;
+        min-height: auto;
+    }
+    
+    .product-price {
+        font-size: 1.3em;
+    }
+    
+    .buy-btn {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+    
+    /* Similar Products */
+    .similar-products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .similar-product-card {
+        padding: 15px;
+    }
+    
+    /* Filters */
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    select, input {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    h1 {
+        font-size: 3em;
+    }
+    
+    .nav-container {
+        padding: 20px;
     }
     
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     
     .similar-products-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-stats {
+        gap: 40px;
+    }
+    
+    .trust-badges {
+        flex-wrap: wrap;
+    }
+}
+
+/* Desktop (1024px+) - Styles de base déjà optimisés */
+@media (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .similar-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -696,7 +833,7 @@ h1 {
             <h1>💰 RAM Price Check</h1>
             <p class="subtitle">Ddr4 16Gb</p>
             <div class="badge">🤖 Mis à jour automatiquement</div>
-            <p class="update-time">Dernière mise à jour : 2026-02-06 17:24 UTC</p>
+            <p class="update-time">Dernière mise à jour : 2026-02-07 14:25 UTC</p>
         </header>
         
         <div class="products-grid">

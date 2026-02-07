@@ -577,55 +577,192 @@ h1 {
     box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
 }
 
-@media (max-width: 768px) {
-    .nav-links {
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE FIRST
+   ============================================ */
+
+/* Mobile (default: 320px - 767px) */
+@media (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 0 5px;
+    }
+    
+    /* Navigation */
+    .nav-container {
+        flex-direction: column;
+        padding: 15px 10px;
         gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .nav-links a {
-        font-size: 0.85em;
-    }
-    
-    .logo {
-        font-size: 1.2em;
-    }
-    
-    .logo-icon {
-        font-size: 1.5em;
-    }
-    
-    h1 { 
-        font-size: 2.5em; 
-    }
-    
-    .trust-badges {
-        gap: 15px;
-    }
-    
-    .trust-badge {
-        font-size: 0.85em;
+        font-size: 0.8em;
         padding: 6px 12px;
     }
     
-    .subtitle {
+    .logo {
         font-size: 1.1em;
+    }
+    
+    .logo-icon {
+        font-size: 1.3em;
+    }
+    
+    /* Hero Section */
+    h1 { 
+        font-size: 2em;
+        letter-spacing: -1px;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+    
+    .trust-badges {
+        gap: 10px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .trust-badge {
+        font-size: 0.8em;
+        padding: 8px 12px;
+        justify-content: center;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2.5em;
+    }
+    
+    .stat-label {
+        font-size: 0.8em;
     }
     
     .hero-cta-btn {
-        font-size: 1.1em;
-        padding: 16px 40px;
+        font-size: 1em;
+        padding: 14px 30px;
+        width: 100%;
+        max-width: 300px;
     }
     
     header {
-        padding: 60px 15px 40px;
+        padding: 40px 10px 30px;
+    }
+    
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .product-title {
+        font-size: 1em;
+        min-height: auto;
+    }
+    
+    .product-price {
+        font-size: 1.3em;
+    }
+    
+    .buy-btn {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+    
+    /* Similar Products */
+    .similar-products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .similar-product-card {
+        padding: 15px;
+    }
+    
+    /* Filters */
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    select, input {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    h1 {
+        font-size: 3em;
+    }
+    
+    .nav-container {
+        padding: 20px;
     }
     
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     
     .similar-products-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-stats {
+        gap: 40px;
+    }
+    
+    .trust-badges {
+        flex-wrap: wrap;
+    }
+}
+
+/* Desktop (1024px+) - Styles de base déjà optimisés */
+@media (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .similar-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -1052,42 +1189,42 @@ h1 {
             <div class="similar-products-grid">
             
                 <div class="similar-product-card">
-                    <img src="https://m.media-amazon.com/images/I/51PLQhgVmmL._AC_UY218_.jpg" alt="Crucial 16GB DDR5 RAM Kit (2x8GB), 5600MHz Desktop Memory, UDIMM 288-Pins, Compatible with Intel Core and AMD Ryzen 7000 - CT2K8G56C46U5" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
+                    <img src="https://m.media-amazon.com/images/I/61gD0yqG+AL._AC_UY218_.jpg" alt="G.SKILL Flare X5 Series DDR5 RAM (AMD Expo & Intel XMP 3.0) 32GB (2x16GB) 6000MT/s CL36-36-36-96 1.35V Desktop Computer Memory U-DIMM - Matte Black (F5-6000J3636F16GX2-FX5)" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
                     <div class="similar-product-info">
-                        <h4 class="similar-product-title">Crucial 16GB DDR5 RAM Kit (2x8GB), 5600MHz Desktop Memory, UDIMM 288-Pins, Compatible with Intel Core and AMD Ryzen 7000 - CT2K8G56C46U5</h4>
-                        <div class="recommendation-badge excellent">⭐ Excellent rapport <span class="score">7.1/10</span></div>
-                        <p class="similar-product-price">$117.15</p>
-                        <a href="ram-crucial-16gb-ddr5-kit-2x8gb-5600mhz-desktop-memory-udimm-fr.html" class="similar-view-button">Voir l'offre</a>
+                        <h4 class="similar-product-title">G.SKILL Flare X5 Series DDR5 RAM (AMD Expo & Intel XMP 3.0) 32GB (2x16GB) 6000MT/s CL36-36-36-96 1.35V Desktop Computer Memory U-DIMM - Matte Black (F5-6000J3636F16GX2-FX5)</h4>
+                        <div class="recommendation-badge good">✓ Bon choix <span class="score">5.3/10</span></div>
+                        <p class="similar-product-price">$364.12</p>
+                        <a href="ram-gskill-flare-x5-series-ddr5-amd-expo-intel-xmp-30-32gb-2-fr.html" class="similar-view-button">Voir l'offre</a>
                     </div>
                 </div>
             
                 <div class="similar-product-card">
-                    <img src="https://m.media-amazon.com/images/I/51PLQhgVmmL._AC_UY218_.jpg" alt="Crucial 16GB DDR5 RAM Kit (2x8GB), 5600MHz Desktop Memory, UDIMM 288-Pins, Compatible with Intel Core and AMD Ryzen 7000 - CT2K8G56C46U5" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
+                    <img src="https://m.media-amazon.com/images/I/71rq9GAZMfL._AC_UY218_.jpg" alt="Samsung 32GB (2x16GB) DDR5 5600MHz PC5-44800 CL46 UDIMM 1Rx8 Single Rank 1.1V Non-ECC DIMM 288-Pin Desktop Computer RAM Memory" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
                     <div class="similar-product-info">
-                        <h4 class="similar-product-title">Crucial 16GB DDR5 RAM Kit (2x8GB), 5600MHz Desktop Memory, UDIMM 288-Pins, Compatible with Intel Core and AMD Ryzen 7000 - CT2K8G56C46U5</h4>
-                        <div class="recommendation-badge excellent">⭐ Excellent rapport <span class="score">7.1/10</span></div>
-                        <p class="similar-product-price">$117.15</p>
-                        <a href="ram-crucial-16gb-ddr5-kit-2x8gb-5600mhz-desktop-memory-udimm-fr.html" class="similar-view-button">Voir l'offre</a>
+                        <h4 class="similar-product-title">Samsung 32GB (2x16GB) DDR5 5600MHz PC5-44800 CL46 UDIMM 1Rx8 Single Rank 1.1V Non-ECC DIMM 288-Pin Desktop Computer RAM Memory</h4>
+                        <div class="recommendation-badge good">✓ Bon choix <span class="score">5.0/10</span></div>
+                        <p class="similar-product-price">$388</p>
+                        <a href="ram-samsung-32gb-2x16gb-ddr5-5600mhz-pc5-44800-cl46-udimm-1rx8-s-fr.html" class="similar-view-button">Voir l'offre</a>
                     </div>
                 </div>
             
                 <div class="similar-product-card">
-                    <img src="https://m.media-amazon.com/images/I/71mpqWtH5sL._AC_UY218_.jpg" alt="Crucial 32GB DDR5 RAM Kit (2x16GB), 5600MHz (or 5200MHz or 4800MHz) Laptop Memory 262-Pin SODIMM, Compatible with Intel Core and AMD Ryzen 7000, Black - CT2K16G56C46S5" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
+                    <img src="https://m.media-amazon.com/images/I/71CrmOfjDDL._AC_UY218_.jpg" alt="G.SKILL Ripjaws S5 Series DDR5 RAM (Intel XMP 3.0 & AMD Expo) 32GB (2x16GB) 5200MT/s CL40-40-40-83 1.10V Desktop Computer Memory U-DIMM - Matte Black (F5-5200J4040A16GX2-RS5K)" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
                     <div class="similar-product-info">
-                        <h4 class="similar-product-title">Crucial 32GB DDR5 RAM Kit (2x16GB), 5600MHz (or 5200MHz or 4800MHz) Laptop Memory 262-Pin SODIMM, Compatible with Intel Core and AMD Ryzen 7000, Black - CT2K16G56C46S5</h4>
-                        <div class="recommendation-badge excellent">⭐ Excellent rapport <span class="score">6.5/10</span></div>
-                        <p class="similar-product-price">$297.88</p>
-                        <a href="ram-crucial-32gb-ddr5-kit-2x16gb-5600mhz-or-5200mhz-or-4800m-fr.html" class="similar-view-button">Voir l'offre</a>
+                        <h4 class="similar-product-title">G.SKILL Ripjaws S5 Series DDR5 RAM (Intel XMP 3.0 & AMD Expo) 32GB (2x16GB) 5200MT/s CL40-40-40-83 1.10V Desktop Computer Memory U-DIMM - Matte Black (F5-5200J4040A16GX2-RS5K)</h4>
+                        <div class="recommendation-badge neutral">Notre avis <span class="score">4.6/10</span></div>
+                        <p class="similar-product-price">$364.12</p>
+                        <a href="ram-gskill-ripjaws-s5-series-ddr5-intel-xmp-30-amd-expo-32gb-fr.html" class="similar-view-button">Voir l'offre</a>
                     </div>
                 </div>
             
                 <div class="similar-product-card">
-                    <img src="https://m.media-amazon.com/images/I/51qZqQI02oL._AC_UY218_.jpg" alt="Crucial Pro 32GB DDR5 RAM Kit (2x16GB), 6000MHz (or 5600MHz or 5200MHz or 4800MHz) Desktop Memory UDIMM 288-pin, Compatible with 13th Gen Intel Core and AMD Ryzen 7000 - CP2K16G60C48U5" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
+                    <img src="https://m.media-amazon.com/images/I/81VgoM65v1L._AC_UL320_.jpg" alt="Patriot Memory Viper Venom Kit DDR5 RAM 32GB (2 x 16GB) 5600MHz CL36" onerror="this.src='https://via.placeholder.com/150x150/667eea/ffffff?text=No+Image'">
                     <div class="similar-product-info">
-                        <h4 class="similar-product-title">Crucial Pro 32GB DDR5 RAM Kit (2x16GB), 6000MHz (or 5600MHz or 5200MHz or 4800MHz) Desktop Memory UDIMM 288-pin, Compatible with 13th Gen Intel Core and AMD Ryzen 7000 - CP2K16G60C48U5</h4>
-                        <div class="recommendation-badge excellent">⭐ Excellent rapport <span class="score">6.5/10</span></div>
-                        <p class="similar-product-price">$296.12</p>
-                        <a href="ram-crucial-pro-32gb-ddr5-kit-2x16gb-6000mhz-or-5600mhz-or-5-fr.html" class="similar-view-button">Voir l'offre</a>
+                        <h4 class="similar-product-title">Patriot Memory Viper Venom Kit DDR5 RAM 32GB (2 x 16GB) 5600MHz CL36</h4>
+                        <div class="recommendation-badge neutral">Notre avis <span class="score">4.4/10</span></div>
+                        <p class="similar-product-price">$437</p>
+                        <a href="ram-patriot-memory-viper-venom-kit-ddr5-32gb-2-x-16gb-5600mh-fr.html" class="similar-view-button">Voir l'offre</a>
                     </div>
                 </div>
             
