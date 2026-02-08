@@ -1,0 +1,15 @@
+# GitHub Pages Configuration
+title: RAM Price Check
+description: Real-time price tracking and comparison
+url: https://rampricecheck.com
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+plugins: []
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Rating Methodology | RamPriceCheck.com</title>
+    <meta name="description" content="How we evaluate RAM products to help you make the best choice">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(74, 144, 226, 0.15) 0%, transparent 50%);
+            min-height: 100vh;
+            color: white;
+            line-height: 1.6;
+            padding: 0;
+        }
+        
+        /* Header Navigation */
+        .top-header {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 2em;
+        }
+        
+        .logo-text {
+            font-size: 1.4em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F7931E 0%, #FF6B35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .home-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #F7931E 0%, #FF6B35 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        .content-wrapper {
+            padding: 0 20px 40px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #F7931E 0%, #FF6B35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+        
+        .intro {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #FF6B35;
+            border-radius: 8px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            margin: 40px 0 20px;
+            color: #FF6B35;
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            margin: 30px 0 15px;
+            color: #F7931E;
+        }
+        
+        .formula-box {
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid #667eea;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        
+        .factor {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #10b981;
+        }
+        
+        .factor h3 {
+            color: #10b981;
+            margin-top: 0;
+        }
+        
+        .factor ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .factor li {
+            margin: 8px 0;
+            color: #ddd;
+        }
+        
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .badge-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .badge-item .emoji {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .badge-item .name {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .badge-item .score {
+            color: #FF6B35;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .badge-item .desc {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        
+        .example-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .example-box .product {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #10b981;
+        }
+        
+        .example-box ol {
+            padding-left: 20px;
+        }
+        
+        .example-box li {
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.05em;
+        }
+        
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .check-list li {
+            padding: 10px 0;
+            font-size: 1.05em;
+        }
+        
+        .limitations {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 4px solid #FF6B35;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .limitations ul {
+            padding-left: 20px;
+        }
+        
+        .limitations li {
+            margin: 10px 0;
+            color: #ddd;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .top-header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .logo-text {
+                font-size: 1.2em;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .badge-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <div class="top-header">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">💾</span>
+            <span class="logo-text">RamPriceCheck</span>
+        </a>
+        <a href="index.html" class="home-btn">
+            <span>←</span>
+            <span>Back to Home</span>
+        </a>
+    </div>
+    
+    <div class="content-wrapper">
+        <div class="container">
+            <h1>Our Rating Methodology</h1>
+            <div class="subtitle">How we evaluate RAM products to help you make the best choice</div>
+            
+            <div class="intro">At RamPriceCheck.com, we don't just compare prices — we provide expert ratings to help you identify the best value products. Our scoring system is transparent, objective, and based on key performance and value factors.</div>
+            
+            <h2>The Rating Formula</h2>
+            <div class="formula-box">
+            Score = (Capacity ÷ Price) × DDR Bonus × Speed Bonus × Relevance Bonus<br><br>
+            Final Score = min(10.0, Raw Score × 35.0)
+        </div>
+        
+        <h2>Rating Factors Explained</h2>
+
+        <div class="factor">
+            <h3>1. Capacity-to-Price Ratio (Base Score)</h3>
+            <p>The foundation of our rating: how much RAM capacity you get per dollar spent.</p>
+<p style="margin-top:10px;font-style:italic;color:#aaa;">Example: 32GB at $160 = 0.200 GB/$ (better) vs 16GB at $100 = 0.160 GB/$ (worse)</p></div>
+        <div class="factor">
+            <h3>2. DDR Generation Bonus</h3>
+            <p>DDR5 delivers significantly better performance than DDR4 (2x bandwidth, better efficiency).</p>
+<ul><li>DDR5: +30% bonus (×1.3)</li><li>DDR4: +10% bonus (×1.1) — still viable for budget upgrades in 2026</li></ul></div>
+        <div class="factor">
+            <h3>3. Speed Bonus</h3>
+            <p>Higher speeds improve gaming FPS, rendering times, and overall system responsiveness.</p>
+<ul><li>≥5600MHz: +15% bonus (×1.15)</li><li><5600MHz: No bonus (×1.0)</li></ul></div>
+        <div class="factor">
+            <h3>4. Relevance Capacity Bonus</h3>
+            <p>Modern software requires adequate RAM. Our scoring reflects 2026 standards.</p>
+<ul><li>8GB: -15% penalty (×0.85) — obsolete for modern usage</li><li>16GB: Baseline (×1.0) — minimum standard</li><li>32GB: +15% bonus (×1.15) — sweet spot for gaming/production</li><li>64GB: +5% bonus (×1.05) — workstation/professional use</li></ul></div>
+        <h2>Badge System</h2>
+        <div class="badge-grid">
+
+            <div class="badge-item">
+                <div class="emoji">🏆</div>
+                <div class="name">Top Choice</div>
+                <div class="score">8.0 - 10.0</div>
+                <div class="desc">Exceptional value, highly recommended</div>
+            </div>
+
+            <div class="badge-item">
+                <div class="emoji">⭐</div>
+                <div class="name">Excellent Value</div>
+                <div class="score">6.0 - 7.9</div>
+                <div class="desc">Great balance of price and performance</div>
+            </div>
+
+            <div class="badge-item">
+                <div class="emoji">✓</div>
+                <div class="name">Good Choice</div>
+                <div class="score">5.0 - 5.9</div>
+                <div class="desc">Solid option, worth considering</div>
+            </div>
+
+            <div class="badge-item">
+                <div class="emoji"></div>
+                <div class="name">Our Rating</div>
+                <div class="score">< 5.0</div>
+                <div class="desc">Average or below average value</div>
+            </div>
+
+        </div>
+        
+        <h2>Real Example</h2>
+        <div class="example-box">
+            <div class="product">Corsair Vengeance DDR5 32GB @ $160, 6000MHz</div>
+            <ol>
+<li>Base: 32 ÷ 160 = 0.200 GB/$</li><li>DDR5 Bonus: 0.200 × 1.3 = 0.260</li><li>Speed Bonus (6000MHz): 0.260 × 1.15 = 0.299</li><li>Relevance (32GB): 0.299 × 1.15 = 0.344</li><li>Normalization: 0.344 × 35.0 = 12.04</li><li>Final Score: min(10.0, 12.04) = 10.0/10 🏆</li>
+            </ol>
+        </div>
+        
+        <h2>Why Trust Our Ratings?</h2>
+        <ul class="check-list">
+<li>✅ Transparent formula — no hidden factors or bias</li><li>✅ Objective calculation — same criteria for all products</li><li>✅ Updated daily — reflects current market prices</li><li>✅ No paid placements — scores cannot be bought</li><li>✅ Open methodology — you can verify the math yourself</li>
+        </ul>
+        
+        <h2>Known Limitations</h2>
+        <div class="limitations">
+            <ul>
+<li>Speed detection is keyword-based (may miss some fast modules)</li><li>Prices are static snapshots (we update daily but Amazon prices fluctuate)</li><li>Brand reputation not factored (Corsair vs generic brands scored equally)</li><li>Advanced specs like CAS latency not included yet</li>
+            </ul>
+        </div>
+        
+        <p style="margin-top:40px;font-size:1.1em;color:#ccc;">Our goal is simple: help you find the best RAM for your money. Questions about our methodology? Contact us!</p>
+        
+        <a href="index.html" class="back-btn">← Back to Homepage</a>
+        </div>
+    </div>
+</body>
+</html>
